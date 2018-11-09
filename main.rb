@@ -1,22 +1,18 @@
 require 'rack'
-
-class MyRackMiddleware
-  def initialize(app)
-    @app = app
-  end
-  def call(env)
-    status, headers, body = @app.call(env)
-    append_s = '... It`s me.. )))`!!'
-    append_m = '<style>
-                .h {color: red;}
-                </style>
-                  <h1 class="h"> KILL KENNY !!!<h1>'
-    [status, headers, body << append_s << append_m]
-  end
-end
+require 'erb'
 
 class App
   def call(env)
-    [200, {"Content-Type" => "text/html"}, ["Hello Rack !!.."]]
+    request = Rack::Request.new(env)
+    case request.path
+    when '/'
+      then Rack::Response.new(render('index.html.erb'))
+      else Rack::Response.new('Not found', 404)
+    end
+  end
+
+  def render(template)
+    path = File.expand_path("../templates/#{template}", __FILE__)
+    ERB.new(File.read(path)).result(binding)
   end
 end

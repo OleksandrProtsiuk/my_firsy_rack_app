@@ -1,5 +1,5 @@
 load 'main.rb'
 
 use Rack::Reloader
-use Rack::Static
+# run Rack::Cascade.new([Rack::File.new('static'), App])
 run App.new

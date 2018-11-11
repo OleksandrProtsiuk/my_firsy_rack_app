@@ -14,17 +14,34 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <% pet_name %> <!-- WHYYY ?????-->
-    </div>
-    <div class="col-6">
+<div class="container col-sm-6 well well-lg">
       <div>
-          <h1>WELL, WELL, mr. ANDERSON</h1>
+        <p></p>
+        <h1><%= pet_name %> status bar</h1>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="20" style="width: 25%">Health</div>
+        </div>
+        <p></p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="20" style="width: 25%">Hunger</div>
+        </div>
+        <p></p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="20" style="width: 25%">Joy</div>
+        </div>
+        <p></p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="20" style="width: 25%">Purity</div>
+        </div>
+        <p></p>
       </div>
-    </div>
-  </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary btn-lg">Care</button>
+        <button type="button" class="btn btn-primary btn-lg">Feed</button>
+        <button type="button" class="btn btn-primary btn-lg">Play</button>
+        <button type="button" class="btn btn-primary btn-lg">Clear</button>
+        <button type="button" class="btn btn-danger btn-lg">Kill</button>
+      </div>
 </div>
 
 <!-- Optional JavaScript -->

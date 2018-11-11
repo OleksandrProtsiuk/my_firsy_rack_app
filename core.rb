@@ -47,5 +47,5 @@ class Pet
   end
 end
 
-a = Pet.new.actions(clear: true, indicators: [5, -6, 5, 0])
-puts Pet.new.status(parameters: a)
+# a = Pet.new.actions(clear: true, indicators: [5, -6, 5, 0])
+# puts Pet.new.status(parameters: a)

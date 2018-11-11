@@ -8,10 +8,10 @@ class App
     when '/'
       then Rack::Response.new(render('index.html.erb'))
     when '/game'
-      Rack::Response.new do |response|
+      then Rack::Response.new do |response|
         response.set_cookie('pet_name', @request.params['name'])
-        Rack::Response.new(render('game.html.erb'))  # render page ??
-      end
+        Rack::Response.new(render('game.html.erb'))
+        end
       else Rack::Response.new('Not found', 404)
     end
   end
